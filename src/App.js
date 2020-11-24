@@ -7,10 +7,6 @@ function App() {
     <div className="App">
       <FunctionalComponent />
       <ClassComponent />
-
-
-fdfdfdf
-
     </div>
   );
 }

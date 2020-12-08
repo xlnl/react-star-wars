@@ -1,19 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
+// React Router
+import { Route } from 'react-router-dom';
 
-import FunctionalComponent from "./components/FunctionalComponent";
-import ClassComponent from "./components/ClassComponent";
+// Components imports
+import Layout from "./components/common/Layout";
+import Home from "./components/Home";
+import StarshipPage from "./components/Home";
 
+// CSS imports
 import "./css/App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <FunctionalComponent />
-        <ClassComponent />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Layout>
+        <Route exact path="/" component={Home}/>
+        <Route path="/starship" render={({location}) => <StarshipPage location={location}/>}/>
+      </Layout>
+    </div>
+  );
 }
+
 
 export default App;
